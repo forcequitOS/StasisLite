@@ -1,0 +1,10 @@
+Package: cc.forcequit.stasis.lite
+Name: Stasis Lite
+Version: 1.0.0
+Architecture: appletvos-arm64
+Description: Simple package to disable OTA software updates on tvOS. Reboots after install! Supports all tvOS versions, including those unsupported by Stasis.
+Maintainer: Taj C (forcequit)
+Author: Taj C (forcequit)
+Section: Tweaks
+Depends: firmware (>= 9.0)
+Icon: https://raw.githubusercontent.com/forcequitOS/etaTV/main/assets/icons/StasisLiteIcon256.png

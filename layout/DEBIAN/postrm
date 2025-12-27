@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Cleaning up Preferences...
+rm /var/mobile/Library/Preferences/com.apple.MobileAsset.plist
+echo INFO: Please restart to re-enable software updates.

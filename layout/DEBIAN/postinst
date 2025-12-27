@@ -1,0 +1,29 @@
+#!/bin/bash
+echo Writing to Preferences...
+cat <<'EOF' > /var/mobile/Library/Preferences/com.apple.MobileAsset.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MobileAssetAssetAudience</key>
+	<string>null</string>
+	<key>MobileAssetSUAllowOSVersionChange</key>
+	<false/>
+	<key>MobileAssetSUAllowSameVersionFullReplacement</key>
+	<false/>
+	<key>MobileAssetServerURL-com.apple.MobileAsset.MobileSoftwareUpdate.UpdateBrain</key>
+	<string>null</string>
+	<key>MobileAssetServerURL-com.apple.MobileAsset.RecoveryOSUpdate</key>
+	<string>null</string>
+	<key>MobileAssetServerURL-com.apple.MobileAsset.RecoveryOSUpdateBrain</key>
+	<string>null</string>
+	<key>MobileAssetServerURL-com.apple.MobileAsset.SoftwareUpdate</key>
+	<string>null</string>
+</dict>
+</plist>
+EOF
+echo INFO: Your Apple TV will automatically restart in 3 seconds to finish disabling updates.
+(
+    sleep 3
+    launchctl reboot userspace
+) &
